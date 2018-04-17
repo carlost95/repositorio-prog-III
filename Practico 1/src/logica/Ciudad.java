@@ -30,7 +30,7 @@ public class Ciudad {
 	}
 	@Override
 	public String toString() {
-		return "Ciudad [idCiudad=" + idCiudad + ", nombre=" + nombre + ", codigoPostal=" + codigoPostal + "]";
+		return "Ciudad " + idCiudad +" "+ nombre +" "+ codigoPostal ;
 	}
 	
 }

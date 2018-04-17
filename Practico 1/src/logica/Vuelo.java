@@ -1,19 +1,20 @@
 package logica;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Vuelo {
 	private String codigoVuelo;
 	private Aeropuerto salida;
-	private Date fechaHoraSalida;
+	private LocalDate fechaHoraSalida;
 	private Aeropuerto arribo;
-	private Date fechaHoraArribo;
+	private LocalDate fechaHoraArribo;
 	private Aerolinea aerolinea;
 	private  ArrayList<Piloto> pilotos = new ArrayList<Piloto>();
 	private Avion avion;
 	private  ArrayList<Asignacion> pasajeros = new ArrayList<Asignacion>();
-	public Vuelo(String codigoVuelo, Aeropuerto salida, Date fechaHoraSalida, Aeropuerto arribo, Date fechaHoraArribo,
+	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDate fechaHoraSalida, Aeropuerto arribo, LocalDate fechaHoraArribo,
 			Aerolinea aerolinea, ArrayList<Piloto> pilotos, Avion avion, ArrayList<Asignacion> pasajeros) {
 		super();
 		this.codigoVuelo = codigoVuelo;
@@ -38,10 +39,10 @@ public class Vuelo {
 	public void setSalida(Aeropuerto salida) {
 		this.salida = salida;
 	}
-	public Date getFechaHoraSalida() {
+	public LocalDate getFechaHoraSalida() {
 		return fechaHoraSalida;
 	}
-	public void setFechaHoraSalida(Date fechaHoraSalida) {
+	public void setFechaHoraSalida(LocalDate fechaHoraSalida) {
 		this.fechaHoraSalida = fechaHoraSalida;
 	}
 	public Aeropuerto getArribo() {
@@ -50,10 +51,10 @@ public class Vuelo {
 	public void setArribo(Aeropuerto arribo) {
 		this.arribo = arribo;
 	}
-	public Date getFechaHoraArribo() {
+	public LocalDate getFechaHoraArribo() {
 		return fechaHoraArribo;
 	}
-	public void setFechaHoraArribo(Date fechaHoraArribo) {
+	public void setFechaHoraArribo(LocalDate fechaHoraArribo) {
 		this.fechaHoraArribo = fechaHoraArribo;
 	}
 	public Aerolinea getAerolinea() {
@@ -82,9 +83,8 @@ public class Vuelo {
 	}
 	@Override
 	public String toString() {
-		return "Vuelo [codigoVuelo=" + codigoVuelo + ", salida=" + salida + ", fechaHoraSalida=" + fechaHoraSalida
-				+ ", arribo=" + arribo + ", fechaHoraArribo=" + fechaHoraArribo + ", aerolinea=" + aerolinea
-				+ ", pilotos=" + pilotos + ", avion=" + avion + ", pasajeros=" + pasajeros + "]";
+		return "Vuelo " + codigoVuelo +" "+ salida +" "+  fechaHoraSalida +" "+ arribo +" "+ fechaHoraArribo  +" "+ aerolinea
+				 +" "+ pilotos +" "+  avion +" "+  pasajeros;
 	}
 	
 	

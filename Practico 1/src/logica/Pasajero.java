@@ -38,8 +38,7 @@ public class Pasajero {
 	}
 	@Override
 	public String toString() {
-		return "Pasajero [idPasajero=" + idPasajero + ", CUIL=" + CUIL + ", apellido=" + apellido + ", nombre=" + nombre
-				+ ", telefono=" + telefono + "]";
+		return "Pasajero "+ idPasajero +" "+ CUIL +" "+  apellido +" "+  nombre +" "+ telefono;
 	}
 	
 }

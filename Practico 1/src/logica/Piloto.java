@@ -7,8 +7,8 @@ public class Piloto {
 	private String apellido;
 	private String nombre;
 	private String documento;
-	private Date fechaNacimiento;
-	public Piloto(int idPiloto, String apellido, String nombre, String documento, Date fechaNacimiento) {
+	private String fechaNacimiento;
+	public Piloto(int idPiloto, String apellido, String nombre, String documento, String fechaNacimiento) {
 		super();
 		this.idPiloto = idPiloto;
 		this.apellido = apellido;
@@ -40,16 +40,15 @@ public class Piloto {
 	public void setDocumento(String documento) {
 		this.documento = documento;
 	}
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	@Override
 	public String toString() {
-		return "Piloto [idPiloto=" + idPiloto + ", apellido=" + apellido + ", nombre=" + nombre + ", documento="
-				+ documento + ", fechaNacimiento=" + fechaNacimiento + "]";
+		return "Piloto"+" "+ idPiloto +" "+ apellido +" "+ nombre +" "+ documento  +" "+ fechaNacimiento ;
 	}
 	
 }

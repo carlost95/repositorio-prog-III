@@ -40,8 +40,7 @@ public class Avion {
 	}
 	@Override
 	public String toString() {
-		return "Avion [idAvion=" + idAvion + ", modelo=" + modelo + ", matricula=" + matricula + ", listaasiento="
-				+ Arrays.toString(listaasiento) + "]";
+		return "Avion "+idAvion +" "+ modelo +" "+  matricula +" "+  Arrays.toString(listaasiento) ;
 	}
 	
 	
