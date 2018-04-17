@@ -1,14 +1,15 @@
 package logica;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Piloto {
 	private int idPiloto;
 	private String apellido;
 	private String nombre;
 	private String documento;
-	private String fechaNacimiento;
-	public Piloto(int idPiloto, String apellido, String nombre, String documento, String fechaNacimiento) {
+	private LocalDate fechaNacimiento;
+	public Piloto(int idPiloto, String apellido, String nombre, String documento, LocalDate fechaNacimiento) {
 		super();
 		this.idPiloto = idPiloto;
 		this.apellido = apellido;
@@ -40,10 +41,10 @@ public class Piloto {
 	public void setDocumento(String documento) {
 		this.documento = documento;
 	}
-	public String getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	@Override

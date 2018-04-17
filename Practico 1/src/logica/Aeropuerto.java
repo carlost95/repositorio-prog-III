@@ -38,8 +38,9 @@ public class Aeropuerto {
 	}
 	@Override
 	public String toString() {
-		return "Aeropuerto [idAeropuerto=" + idAeropuerto + ", nombre=" + nombre + ", ciudad=" + ciudad + ", codigo="
-				+ codigo + "]";
+		return "Aeropuerto  " + idAeropuerto + " " + nombre + " " + ciudad + " " + codigo ;
 	}
-	
+	public void mostrarAeropuerto(Aeropuerto p1){
+		System.out.println( p1.getNombre() + " "+ p1.getCiudad().getNombre()+ " "+ p1.getCodigo());
+	}
 }

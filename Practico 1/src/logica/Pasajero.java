@@ -6,6 +6,17 @@ public class Pasajero {
 	private String apellido;
 	private String nombre;
 	private String telefono;
+	
+	
+	
+	public Pasajero(int idPasajero, String cUIL, String apellido, String nombre, String telefono) {
+		super();
+		this.idPasajero = idPasajero;
+		CUIL = cUIL;
+		this.apellido = apellido;
+		this.nombre = nombre;
+		this.telefono = telefono;
+	}
 	public int getIdPasajero() {
 		return idPasajero;
 	}

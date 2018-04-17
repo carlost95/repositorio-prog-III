@@ -22,7 +22,7 @@ public class Aerolinea {
 	}
 	@Override
 	public String toString() {
-		return "Aerolinea    "+ idAerolinea  + nombre ;
+		return "Aerolinea    "+ idAerolinea  +" "+ nombre ;
 	}
 	
 	

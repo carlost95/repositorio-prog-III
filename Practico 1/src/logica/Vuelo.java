@@ -2,19 +2,21 @@ package logica;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Vuelo {
 	private String codigoVuelo;
 	private Aeropuerto salida;
-	private LocalDate fechaHoraSalida;
+	private LocalDateTime fechaHoraSalida;
 	private Aeropuerto arribo;
-	private LocalDate fechaHoraArribo;
+	private LocalDateTime fechaHoraArribo;
 	private Aerolinea aerolinea;
 	private  ArrayList<Piloto> pilotos = new ArrayList<Piloto>();
 	private Avion avion;
 	private  ArrayList<Asignacion> pasajeros = new ArrayList<Asignacion>();
-	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDate fechaHoraSalida, Aeropuerto arribo, LocalDate fechaHoraArribo,
+	
+	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDateTime fechaHoraSalida, Aeropuerto arribo, LocalDateTime fechaHoraArribo,
 			Aerolinea aerolinea, ArrayList<Piloto> pilotos, Avion avion, ArrayList<Asignacion> pasajeros) {
 		super();
 		this.codigoVuelo = codigoVuelo;
@@ -39,10 +41,10 @@ public class Vuelo {
 	public void setSalida(Aeropuerto salida) {
 		this.salida = salida;
 	}
-	public LocalDate getFechaHoraSalida() {
+	public LocalDateTime getFechaHoraSalida() {
 		return fechaHoraSalida;
 	}
-	public void setFechaHoraSalida(LocalDate fechaHoraSalida) {
+	public void setFechaHoraSalida(LocalDateTime fechaHoraSalida) {
 		this.fechaHoraSalida = fechaHoraSalida;
 	}
 	public Aeropuerto getArribo() {
@@ -51,10 +53,10 @@ public class Vuelo {
 	public void setArribo(Aeropuerto arribo) {
 		this.arribo = arribo;
 	}
-	public LocalDate getFechaHoraArribo() {
+	public LocalDateTime getFechaHoraArribo() {
 		return fechaHoraArribo;
 	}
-	public void setFechaHoraArribo(LocalDate fechaHoraArribo) {
+	public void setFechaHoraArribo(LocalDateTime fechaHoraArribo) {
 		this.fechaHoraArribo = fechaHoraArribo;
 	}
 	public Aerolinea getAerolinea() {

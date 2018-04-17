@@ -30,8 +30,7 @@ public class Asignacion {
 	}
 	@Override
 	public String toString() {
-		return "Asignacion [pasajero=" + pasajero + ", asiento=" + asiento + ", codigoAsignacion=" + codigoAsignacion
-				+ "]";
+		return "Asignacion " + pasajero + " " + asiento + " " + codigoAsignacion ;
 	}
 	
 }
