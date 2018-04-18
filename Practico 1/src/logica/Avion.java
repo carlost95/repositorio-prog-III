@@ -1,13 +1,14 @@
 package logica;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Avion {
 	private int idAvion;
 	private String modelo;
 	private String matricula;
-	private Asiento listaasiento [];
-	public Avion(int idAvion, String modelo, String matricula, Asiento[] listaasiento) {
+	private ArrayList<Asiento> listaasiento;
+	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaasiento) {
 		super();
 		this.idAvion = idAvion;
 		this.modelo = modelo;
@@ -32,15 +33,15 @@ public class Avion {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	public Asiento[] getListaasiento() {
+	public ArrayList<Asiento> getListaasiento() {
 		return listaasiento;
 	}
-	public void setListaasiento(Asiento[] listaasiento) {
+	public void setListaasiento(ArrayList<Asiento> listaasiento) {
 		this.listaasiento = listaasiento;
 	}
 	@Override
 	public String toString() {
-		return "Avion "+idAvion +" "+ modelo +" "+  matricula +" "+  Arrays.toString(listaasiento) ;
+		return "Avion "+idAvion +" "+ modelo +" "+  matricula +" "+ (listaasiento) ;
 	}
 	
 	

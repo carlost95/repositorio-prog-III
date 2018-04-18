@@ -12,12 +12,12 @@ public class Vuelo {
 	private Aeropuerto arribo;
 	private LocalDateTime fechaHoraArribo;
 	private Aerolinea aerolinea;
-	private  ArrayList<Piloto> pilotos = new ArrayList<Piloto>();
+	private  ArrayList<Piloto> pilotos;
 	private Avion avion;
-	private  ArrayList<Asignacion> pasajeros = new ArrayList<Asignacion>();
+	private  ArrayList<Asignacion> pasajeros;
 	
 	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDateTime fechaHoraSalida, Aeropuerto arribo, LocalDateTime fechaHoraArribo,
-			Aerolinea aerolinea, ArrayList<Piloto> pilotos, Avion avion, ArrayList<Asignacion> pasajeros) {
+			Aerolinea aerolinea, ArrayList<Piloto> pilotos, Avion avion, ArrayList<Asignacion> pasajeros2) {
 		super();
 		this.codigoVuelo = codigoVuelo;
 		this.salida = salida;
@@ -27,7 +27,8 @@ public class Vuelo {
 		this.aerolinea = aerolinea;
 		this.pilotos = pilotos;
 		this.avion = avion;
-		this.pasajeros = pasajeros;
+		this.pasajeros = pasajeros2;
+
 	}
 	public String getCodigoVuelo() {
 		return codigoVuelo;

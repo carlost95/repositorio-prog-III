@@ -30,7 +30,7 @@ public class Asignacion {
 	}
 	@Override
 	public String toString() {
-		return "Asignacion " + pasajero + " " + asiento + " " + codigoAsignacion ;
+		return  pasajero + " " + asiento + " " + codigoAsignacion ;
 	}
 	
 }
