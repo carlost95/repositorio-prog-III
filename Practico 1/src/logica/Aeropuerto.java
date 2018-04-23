@@ -40,7 +40,8 @@ public class Aeropuerto {
 	public String toString() {
 		return "Aeropuerto  " + idAeropuerto + " " + nombre + " " + ciudad + " " + codigo ;
 	}
-	public void mostrarAeropuerto(Aeropuerto p1){
-		System.out.println( p1.getNombre() + " "+ p1.getCiudad().getNombre()+ " "+ p1.getCodigo());
+	public String mostrarAeropuerto(){
+	return (nombre + ciudad.getNombre() +" "+codigo );
 	}
 }
+ 

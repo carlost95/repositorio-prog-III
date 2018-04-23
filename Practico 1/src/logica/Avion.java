@@ -41,8 +41,7 @@ public class Avion {
 	}
 	@Override
 	public String toString() {
-		return "Avion "+idAvion +" "+ modelo +" "+  matricula +" "+ (listaasiento) ;
+		return idAvion +" "+ modelo +" "+  matricula +" "+ (listaasiento) ;
 	}
-	
 	
 }

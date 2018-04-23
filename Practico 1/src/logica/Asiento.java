@@ -22,7 +22,7 @@ public class Asiento {
 	}
 	@Override
 	public String toString() {
-		return "Asiento " + idAsiento + " " + numeroAsiento ;
+		return   idAsiento + " " + numeroAsiento ;
 	}
 	
 	

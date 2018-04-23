@@ -49,7 +49,9 @@ public class Pasajero {
 	}
 	@Override
 	public String toString() {
-		return "Pasajero "+ idPasajero +" "+ CUIL +" "+  apellido +" "+  nombre +" "+ telefono;
+		return  idPasajero +" "+ CUIL +" "+  apellido +" "+  nombre +" "+ telefono;
 	}
-	
+	public String mostrarPasajero(){
+		return (apellido+" "+ nombre);
+	}
 }
