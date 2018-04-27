@@ -8,13 +8,24 @@ public class Avion {
 	private String modelo;
 	private String matricula;
 	private ArrayList<Asiento> listaasiento;
-	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaasiento) {
+	private int horasVueloAvion;
+	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaasiento, int horasVueloVuelo) {
 		super();
 		this.idAvion = idAvion;
 		this.modelo = modelo;
 		this.matricula = matricula;
 		this.listaasiento = listaasiento;
+		this.horasVueloAvion= horasVueloVuelo;
 	}
+	
+	public int getHorasVueloAvion() {
+		return horasVueloAvion;
+	}
+
+	public void setHorasVueloAvion(int horasVueloAvion) {
+		this.horasVueloAvion = horasVueloAvion;
+	}
+
 	public int getIdAvion() {
 		return idAvion;
 	}
@@ -39,9 +50,6 @@ public class Avion {
 	public void setListaasiento(ArrayList<Asiento> listaasiento) {
 		this.listaasiento = listaasiento;
 	}
-	@Override
-	public String toString() {
-		return idAvion +" "+ modelo +" "+  matricula +" "+ (listaasiento) ;
-	}
+
 	
 }

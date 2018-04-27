@@ -19,11 +19,11 @@ public class test {
 		ArrayList<Piloto> pilotosMayores = new ArrayList<>(); 
 		ArrayList<Avion> aviones =  new ArrayList<>();
 		
-		Piloto p1 = new Piloto(1, "Perez","Juan Antonio","07071970", LocalDate.of(1970, 07, 07));
-		Piloto p2 = new Piloto(2, "Martínez", "Juan Ignacio","08081978", LocalDate.of(1978, 8, 8));
-		Piloto p3 = new Piloto(3, "López", "Juan Carlos", "05051950", LocalDate.of(1950, 05, 05));
-		Piloto p4 = new Piloto(4, "Gomez", "juan Gabriel", "10101960", LocalDate.of(1960, 10, 10));
-		Piloto p5 = new Piloto(5, "Juarez", "Leonel Agustin", "07365987", LocalDate.of(1968, 03, 05));
+		Piloto p1 = new Piloto(1, "Perez","Juan Antonio","07071970", LocalDate.of(1970, 07, 07),5);
+		Piloto p2 = new Piloto(2, "Martínez", "Juan Ignacio","08081978", LocalDate.of(1978, 8, 8),4);
+		Piloto p3 = new Piloto(3, "López", "Juan Carlos", "05051950", LocalDate.of(1950, 05, 05),3);
+		Piloto p4 = new Piloto(4, "Gomez", "juan Gabriel", "10101960", LocalDate.of(1960, 10, 10),2);
+		Piloto p5 = new Piloto(5, "Juarez", "Leonel Agustin", "07365987", LocalDate.of(1968, 03, 05),1);
 			
 		pilotos.add(p1);
 		pilotos.add(p2);
@@ -55,11 +55,11 @@ public class test {
 		Aerolinea a4 = new Aerolinea(4, "Iberia");
 		Aerolinea a5 = new Aerolinea(5, "Emirates");
 				
-		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion);	
-		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion);
-		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion);
-		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion);
-		Avion v5 = new Avion(4, "A320", "LV-CBV", asientosAvion);
+		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
+		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
+		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
+		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
+		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
 		
 		Asiento as1 = new Asiento(1, "A1");
 		Asiento as2 = new Asiento(2, "B1");
@@ -80,7 +80,7 @@ public class test {
 		pasajeros.add(asi1);
 		pasajeros.add(asi2);
 		
-		Vuelo vu1 = new Vuelo("AR2443",ae1,LocalDateTime.of(2018, 04, 10, 21, 10),ae2,LocalDateTime.of(2018, 04, 10, 22, 45),a1,pilotos,v1,pasajeros);
+		Vuelo vu1 = new Vuelo("AR2443",ae1,LocalDateTime.of(2018, 04, 10, 21, 35),ae2,LocalDateTime.of(2018, 04, 10, 22, 45),a1,pilotos,v1,pasajeros);
 		
 		vuelos.add(vu1);
 		
@@ -131,16 +131,20 @@ public class test {
 		System.out.println("-------------------Mostrar los pilotos mayores-------------------");
 		mostrarPilotosMayores(pilotosMayores);
 		System.out.println("------------------Mostrar Horas de Aviones-----------------------");
+		
+		Collections.sort(aviones, new OrdenaAvionesHorasVuelo());
 		for (Avion avion : aviones) {
-			System.out.println(avion.getModelo()+" "+ avion.getMatricula() +"-----"+" hs de vuelo");
+			System.out.println(avion.getModelo()+" "+ avion.getMatricula() + " "+ avion.getHorasVueloAvion()+" hs de vuelo");
 		}
+		
+		Collections.sort(pilotos, new OrdenaPilotoHorasVuelo());
 		System.out.println("---------------------Mostrar HS de los Pilotos-------------------");
 		mostrarHorasPilotos(pilotos);
 	}
 	
 	private static void mostrarHorasPilotos(ArrayList<Piloto> pilotos) {
 		for (Piloto piloto : pilotos) {
-			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" "+calcularEdad(piloto)+" años " +"---"+" horas de vuelo");
+			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" "+calcularEdad(piloto)+" años " +piloto.getHorasDeVuelo()+" horas de vuelo");
 		}
 	}
 
