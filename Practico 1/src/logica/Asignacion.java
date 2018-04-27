@@ -28,9 +28,5 @@ public class Asignacion {
 	public void setCodigoAsignacion(String codigoAsignacion) {
 		this.codigoAsignacion = codigoAsignacion;
 	}
-	@Override
-	public String toString() {
-		return  pasajero + " " + asiento + " " + codigoAsignacion ;
-	}
-	
+
 }

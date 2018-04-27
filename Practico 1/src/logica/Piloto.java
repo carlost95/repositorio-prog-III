@@ -9,21 +9,22 @@ public class Piloto {
 	private String nombre;
 	private String documento;
 	private LocalDate fechaNacimiento;
-	private int horasDeVuelo;
-	public Piloto(int idPiloto, String apellido, String nombre, String documento, LocalDate fechaNacimiento) {
+	private int horasDeVueloPiloto;
+	
+	public Piloto(int idPiloto, String apellido, String nombre, String documento, LocalDate fechaNacimiento, int horasDeVueloPiloto) {
 		super();
 		this.idPiloto = idPiloto;
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.documento = documento;
 		this.fechaNacimiento = fechaNacimiento;
-		this.horasDeVuelo = horasDeVuelo;
+		this.horasDeVueloPiloto = horasDeVueloPiloto;
 	}
 	public int getHorasDeVuelo() {
-		return horasDeVuelo;
+		return horasDeVueloPiloto;
 	}
 	public void setHorasDeVuelo(int horasDeVuelo) {
-		this.horasDeVuelo = horasDeVuelo;
+		this.horasDeVueloPiloto = horasDeVueloPiloto;
 	}
 	public int getIdPiloto() {
 		return idPiloto;
