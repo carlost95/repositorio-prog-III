@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+
+
 public class Vuelo {
 	private String codigoVuelo;
 	private Aeropuerto salida;
@@ -14,7 +16,8 @@ public class Vuelo {
 	private Aerolinea aerolinea;
 	private  ArrayList<Piloto> pilotos;
 	private Avion avion;
-	private  ArrayList<Asignacion> pasajeros1;
+	private  ArrayList<Asignacion> pasajeros;
+	private int duracionVuelo;
 	
 	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDateTime fechaHoraSalida, Aeropuerto arribo, LocalDateTime fechaHoraArribo,
 			Aerolinea aerolinea, ArrayList<Piloto> pilotos, Avion avion, ArrayList<Asignacion> pasajeros) {
@@ -27,7 +30,7 @@ public class Vuelo {
 		this.aerolinea = aerolinea;
 		this.pilotos = pilotos;
 		this.avion = avion;
-		this.pasajeros1 = pasajeros;
+		this.pasajeros = pasajeros;
 
 	}
 	public String getCodigoVuelo() {
@@ -79,48 +82,61 @@ public class Vuelo {
 		this.avion = avion;
 	}
 	public ArrayList<Asignacion> getPasajeros() {
-		return pasajeros1;
+		return pasajeros;
 	}
 	public void setPasajeros(ArrayList<Asignacion> pasajeros) {
-		this.pasajeros1 = pasajeros;
+		this.pasajeros = pasajeros;
 	}
-	public int  duracionHoras(int hora1, int hora2){
-		int horas = hora2- hora1;
-		return horas;
-		
-	}
-	public int  duracionMinutos(int min1,int min2){
-		int minutos= min2 - min1;
-		return minutos	;
-	}
-	public String mostrarDetalleVuelo (){
-		int horas = duracionHoras(fechaHoraSalida.getHour(),fechaHoraArribo.getHour()); 
-		int minutos = duracionMinutos(fechaHoraSalida.getMinute(),fechaHoraArribo.getMinute());
-		
-		
-		return ("Vuelo "+ codigoVuelo +"-"+ avion.getModelo() +" "+avion.getMatricula()+'\n'+
-		fechaHoraSalida.getDayOfWeek()+" "+fechaHoraSalida.getDayOfMonth()+" de "+fechaHoraSalida.getMonth()+" "+
-		fechaHoraSalida.getHour()+":"+fechaHoraSalida.getMinute()+" "+salida.getCodigo()+" "+salida.getNombre()+'\n'+
-		fechaHoraArribo.getDayOfWeek()+" "+ fechaHoraArribo.getDayOfMonth()+" de "+ fechaHoraArribo.getMonth()+" "+
-		fechaHoraArribo.getHour()+":"+fechaHoraArribo.getMinute()+" "+arribo.getCodigo()+" "+arribo.getNombre()+'\n'+
-		"Operado por "+aerolinea.getNombre()+" Duracion "+horas+"h "+ minutos+"m" );
-	}
-	
 	public String mostrarDetalleAsignacion(){
 		System.out.println("Detalle de Asignaciones - Vuelo "+codigoVuelo);
 		
-		for (Asiento asiento : avion.getListaasiento()) {
-			for (Asignacion asignacion : pasajeros1) {
-				if (asiento.getIdAsiento() == asignacion.getAsiento().getIdAsiento()){
-					System.out.println("Asiento "+ asiento.getIdAsiento() + " - Ocupado");
+		for (Asiento asiento  : avion.getListaasiento()) {
+			
+			int senial=0;
+			for (Asignacion asignacion : pasajeros) {
+				
+				if (asiento.getIdAsiento()== asignacion.getAsiento().getIdAsiento()){
+					senial=1;
+					System.out.println("Asiento "+ asiento.getNumeroAsiento() + " - Ocupado");
 					break;
 				}
 				else {
-					System.out.println("Asiento "+asiento.getIdAsiento() + " - Libre");
-					break;
+					senial=0;
 				}
 			}
+			if (senial==0) 
+				System.out.println("Asiento "+ asiento.getNumeroAsiento() +" - Libre");
 		}
 		return "";
 	}
+	private void pasarHoras() {
+
+		if(fechaHoraArribo.getHour() > fechaHoraSalida.getHour()) {
+				duracionVuelo = ((fechaHoraArribo.getHour() - fechaHoraSalida.getHour())*60) +
+						(fechaHoraArribo.getMinute() - fechaHoraSalida.getMinute());
+				avion.contadorHorasVuelo(duracionVuelo);
+				}
+		
+		else {
+				duracionVuelo = ((fechaHoraArribo.getHour() - fechaHoraSalida.getHour())*60) -
+						(fechaHoraSalida.getMinute() - fechaHoraArribo.getMinute());
+				avion.contadorHorasVuelo(duracionVuelo);
+				}
+	for (Piloto piloto : pilotos) {
+		piloto.contadorHorasVuelo(duracionVuelo);
+	}
+	}
+	
+	public String mostrarDetalleVuelo (){
+		pasarHoras();
+		return ("Vuelo "+ codigoVuelo +" - "+ avion.getModelo() +" "+avion.getMatricula()+'\n'+
+		fechaHoraSalida.getDayOfWeek()+" "+fechaHoraSalida.getDayOfMonth()+" de "+fechaHoraSalida.getMonth()+" "+
+		fechaHoraSalida.getHour()+":"+fechaHoraSalida.getMinute()+" "+salida.getCodigo()+" ("+salida.getCiudad().getNombre()+" - "+salida.getNombre()+")"+'\n'+
+		fechaHoraArribo.getDayOfWeek()+" "+ fechaHoraArribo.getDayOfMonth()+" de "+ fechaHoraArribo.getMonth()+" "+
+		fechaHoraArribo.getHour()+":"+fechaHoraArribo.getMinute()+" "+arribo.getCodigo()+" ("+arribo.getCiudad().getNombre()+" - "+arribo.getNombre()+")"+'\n'+
+		"Operado por "+aerolinea.getNombre() +" Duración "+duracionVuelo/60+"h "+duracionVuelo%60+"m");
+		
+	}
+	
+	
 }

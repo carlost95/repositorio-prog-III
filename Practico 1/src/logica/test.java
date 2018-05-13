@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
 public class test {
 	public static void main(String[] args) {
 		ArrayList<Piloto> pilotos = new ArrayList<Piloto>();
@@ -55,11 +56,7 @@ public class test {
 		Aerolinea a4 = new Aerolinea(4, "Iberia");
 		Aerolinea a5 = new Aerolinea(5, "Emirates");
 				
-		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
-		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
-		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
-		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
-		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
+		
 		
 		Asiento as1 = new Asiento(1, "A1");
 		Asiento as2 = new Asiento(2, "B1");
@@ -73,29 +70,55 @@ public class test {
 		Asiento as10 = new Asiento(10, "H2");
 		Asiento as11 = new Asiento(11, "J2");
 		Asiento as12 = new Asiento(12, "K2");
+		Asiento as13 = new Asiento(13,"A3");
+		Asiento as14 = new Asiento(14,"B3");
+		Asiento as15 = new Asiento(15,"C3");
+		Asiento as16 = new Asiento(16,"H3");
+		Asiento as17 = new Asiento(17,"J3");
+		Asiento as18 = new Asiento(18,"K3");
+		Asiento as19 = new Asiento(19,"A4");
+		Asiento as20 = new Asiento(20,"B4");
+		Asiento as21 = new Asiento(21,"C4");
+		Asiento as22 = new Asiento(22,"H4");
+		Asiento as23 = new Asiento(23,"J4");
+		Asiento as24 = new Asiento(24,"K4");
+	
+		
+		
+		asientosAvion.add(as1);asientosAvion.add(as13);
+		asientosAvion.add(as2);asientosAvion.add(as14);
+		asientosAvion.add(as3);asientosAvion.add(as15);
+		asientosAvion.add(as4);asientosAvion.add(as16);
+		asientosAvion.add(as5);asientosAvion.add(as17);
+		asientosAvion.add(as6);asientosAvion.add(as18);
+		asientosAvion.add(as7);asientosAvion.add(as19);
+		asientosAvion.add(as8);asientosAvion.add(as20);
+		asientosAvion.add(as9);asientosAvion.add(as21);
+		asientosAvion.add(as10);asientosAvion.add(as22);
+		asientosAvion.add(as11);asientosAvion.add(as23);
+		asientosAvion.add(as12);asientosAvion.add(as24);
 		
 		Asignacion asi1 = new Asignacion(ps1, as1, "AR2443100420182012345678443");
 		Asignacion asi2 = new Asignacion(ps2, as2, "AR2443100420182019827364441");
+		Asignacion asi3 = new Asignacion(ps3, as6, "AR2443100420182019827364442");
+		Asignacion asi4 = new Asignacion(ps4, as8, "AR2443100420182019827364446");
+		Asignacion asi5 = new Asignacion(ps5, as19, "AR2443100420182019827364448");
 		
 		pasajeros.add(asi1);
 		pasajeros.add(asi2);
+		pasajeros.add(asi3);
+		pasajeros.add(asi4);
+		pasajeros.add(asi5);
+				
+		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
+		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
+		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
+		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
+		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
 		
 		Vuelo vu1 = new Vuelo("AR2443",ae1,LocalDateTime.of(2018, 04, 10, 21, 35),ae2,LocalDateTime.of(2018, 04, 10, 22, 45),a1,pilotos,v1,pasajeros);
 		
 		vuelos.add(vu1);
-		
-		asientosAvion.add(as1);
-		asientosAvion.add(as2);
-		asientosAvion.add(as3);
-		asientosAvion.add(as4);
-		asientosAvion.add(as5);
-		asientosAvion.add(as6);
-		asientosAvion.add(as7);
-		asientosAvion.add(as8);
-		asientosAvion.add(as9);
-		asientosAvion.add(as10);
-		asientosAvion.add(as11);
-		asientosAvion.add(as12);
 		
 		aeropuertos.add(ae1);
 		aeropuertos.add(ae2);
@@ -134,7 +157,7 @@ public class test {
 		
 		Collections.sort(aviones, new OrdenaAvionesHorasVuelo());
 		for (Avion avion : aviones) {
-			System.out.println(avion.getModelo()+" "+ avion.getMatricula() + " "+ avion.getHorasVueloAvion()+" hs de vuelo");
+			System.out.println(avion.getModelo()+" ("+ avion.getMatricula() + ") - "+ avion.getHorasVueloAvion()+" hs de vuelo");
 		}
 		
 		Collections.sort(pilotos, new OrdenaPilotoHorasVuelo());
@@ -144,7 +167,7 @@ public class test {
 	
 	private static void mostrarHorasPilotos(ArrayList<Piloto> pilotos) {
 		for (Piloto piloto : pilotos) {
-			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" "+calcularEdad(piloto)+" años " +piloto.getHorasDeVuelo()+" horas de vuelo");
+			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" - "+calcularEdad(piloto)+" años. " +piloto.getHorasDeVueloPiloto()+" horas de vuelo");
 		}
 	}
 

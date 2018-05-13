@@ -20,12 +20,15 @@ public class Piloto {
 		this.fechaNacimiento = fechaNacimiento;
 		this.horasDeVueloPiloto = horasDeVueloPiloto;
 	}
-	public int getHorasDeVuelo() {
-		return horasDeVueloPiloto;
+	
+	public int getHorasDeVueloPiloto() {
+		return horasDeVueloPiloto/60;
 	}
-	public void setHorasDeVuelo(int horasDeVuelo) {
+
+	public void setHorasDeVueloPiloto(int horasDeVueloPiloto) {
 		this.horasDeVueloPiloto = horasDeVueloPiloto;
 	}
+
 	public int getIdPiloto() {
 		return idPiloto;
 	}
@@ -56,6 +59,8 @@ public class Piloto {
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
+	public void contadorHorasVuelo(int horasVueloActual) {
+		horasDeVueloPiloto += horasVueloActual;
+	}
 	
 }

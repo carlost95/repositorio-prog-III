@@ -29,4 +29,6 @@ public class Asignacion {
 		this.codigoAsignacion = codigoAsignacion;
 	}
 
+
+
 }

@@ -7,25 +7,18 @@ public class Avion {
 	private int idAvion;
 	private String modelo;
 	private String matricula;
-	private ArrayList<Asiento> listaasiento;
+	private ArrayList<Asiento> listaAsiento;
 	private int horasVueloAvion;
-	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaasiento, int horasVueloVuelo) {
+	
+	
+	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaAsiento, int horasVueloAvion) {
 		super();
 		this.idAvion = idAvion;
 		this.modelo = modelo;
 		this.matricula = matricula;
-		this.listaasiento = listaasiento;
-		this.horasVueloAvion= horasVueloVuelo;
-	}
-	
-	public int getHorasVueloAvion() {
-		return horasVueloAvion;
-	}
-
-	public void setHorasVueloAvion(int horasVueloAvion) {
+		this.listaAsiento = listaAsiento;
 		this.horasVueloAvion = horasVueloAvion;
 	}
-
 	public int getIdAvion() {
 		return idAvion;
 	}
@@ -45,11 +38,21 @@ public class Avion {
 		this.matricula = matricula;
 	}
 	public ArrayList<Asiento> getListaasiento() {
-		return listaasiento;
+		return listaAsiento;
 	}
 	public void setListaasiento(ArrayList<Asiento> listaasiento) {
-		this.listaasiento = listaasiento;
+		this.listaAsiento = listaasiento;
+	}
+	public int getHorasVueloAvion() {
+		return horasVueloAvion/60;
 	}
 
+	public void setHorasVueloAvion(int horasVueloAvion) {
+		this.horasVueloAvion = horasVueloAvion;
+	}
+	public void contadorHorasVuelo(int horaVueloActual) {
+		this.horasVueloAvion += horaVueloActual;
+		
+	}
 	
 }
