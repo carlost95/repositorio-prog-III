@@ -88,11 +88,12 @@ public class Vuelo {
 		this.pasajeros = pasajeros;
 	}
 	public String mostrarDetalleAsignacion(){
-		System.out.println("Detalle de Asignaciones - Vuelo "+codigoVuelo);
+		System.out.println("Detalle de Asignaciones - Vuelo "+ codigoVuelo);
 		
 		for (Asiento asiento  : avion.getListaasiento()) {
 			
 			int senial=0;
+			
 			for (Asignacion asignacion : pasajeros) {
 				
 				if (asiento.getIdAsiento()== asignacion.getAsiento().getIdAsiento()){

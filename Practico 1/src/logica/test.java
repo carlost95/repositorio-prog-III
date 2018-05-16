@@ -1,6 +1,7 @@
 package logica;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -19,6 +20,7 @@ public class test {
 		ArrayList<Vuelo> vuelos = new ArrayList<>();
 		ArrayList<Piloto> pilotosMayores = new ArrayList<>(); 
 		ArrayList<Avion> aviones =  new ArrayList<>();
+		ArrayList<Ciudad> ciudades = new ArrayList<>();
 		
 		Piloto p1 = new Piloto(1, "Perez","Juan Antonio","07071970", LocalDate.of(1970, 07, 07),5);
 		Piloto p2 = new Piloto(2, "Martínez", "Juan Ignacio","08081978", LocalDate.of(1978, 8, 8),4);
@@ -28,15 +30,16 @@ public class test {
 			
 		pilotos.add(p1);
 		pilotos.add(p2);
-		pilotos.add(p3);
-		pilotos.add(p4);
-		pilotos.add(p5);
-		
+//		pilotos.add(p3);
+//		pilotos.add(p4);
+//		pilotos.add(p5);
+//		
 		Ciudad c1 = new Ciudad(1, "La Rioja", "5360");
 		Ciudad c2 =  new Ciudad(2, "Buenos Aires", "1000");
 		Ciudad c3 = new Ciudad(3, "Mendoza", "5500");	
 		Ciudad c4 = new Ciudad(4, "Tucumán", "4000");
 		
+		ciudades.add(c1);
 
 		Aeropuerto ae1= new Aeropuerto(1, "Aeropuerto Capitán Vicente Almandos Almonacid", c1, "IRJ");
 		Aeropuerto ae2= new Aeropuerto(2, "Aeropuerto Buenos Aires Jorge Newbery", c2, "EAP");
@@ -55,8 +58,13 @@ public class test {
 		Aerolinea a3 = new Aerolinea(3, "LATAM");
 		Aerolinea a4 = new Aerolinea(4, "Iberia");
 		Aerolinea a5 = new Aerolinea(5, "Emirates");
-				
-		
+
+		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
+		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
+		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
+		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
+		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
+
 		
 		Asiento as1 = new Asiento(1, "A1");
 		Asiento as2 = new Asiento(2, "B1");
@@ -110,11 +118,6 @@ public class test {
 		pasajeros.add(asi4);
 		pasajeros.add(asi5);
 				
-		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
-		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
-		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
-		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
-		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
 		
 		Vuelo vu1 = new Vuelo("AR2443",ae1,LocalDateTime.of(2018, 04, 10, 21, 35),ae2,LocalDateTime.of(2018, 04, 10, 22, 45),a1,pilotos,v1,pasajeros);
 		
@@ -151,6 +154,7 @@ public class test {
 		for (Vuelo vuelo : vuelos) {
 			System.out.println(vuelo.mostrarDetalleAsignacion());
 		}
+		
 		System.out.println("-------------------Mostrar los pilotos mayores-------------------");
 		mostrarPilotosMayores(pilotosMayores);
 		System.out.println("------------------Mostrar Horas de Aviones-----------------------");
@@ -167,7 +171,11 @@ public class test {
 	
 	private static void mostrarHorasPilotos(ArrayList<Piloto> pilotos) {
 		for (Piloto piloto : pilotos) {
+
 			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" - "+calcularEdad(piloto)+" años. " +piloto.getHorasDeVueloPiloto()+" horas de vuelo");
+
+			System.out.println(piloto.getApellido()+" "+piloto.getNombre()+" "+calcularEdad(piloto)+" años " +piloto.getHorasDeVueloPiloto()+" horas de vuelo");
+
 		}
 	}
 

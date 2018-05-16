@@ -25,7 +25,7 @@ public class Piloto {
 		return horasDeVueloPiloto/60;
 	}
 
-	public void setHorasDeVueloPiloto(int horasDeVueloPiloto) {
+	public void setHorasDeVueloPiloto(int horasDeVuelo) {
 		this.horasDeVueloPiloto = horasDeVueloPiloto;
 	}
 

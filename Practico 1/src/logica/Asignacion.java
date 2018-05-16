@@ -25,10 +25,8 @@ public class Asignacion {
 	public String getCodigoAsignacion() {
 		return codigoAsignacion;
 	}
-	public void setCodigoAsignacion(String codigoAsignacion) {
+	public void setCodigoAsignacion(String codigoAsignacion){
 		this.codigoAsignacion = codigoAsignacion;
 	}
-
-
 
 }

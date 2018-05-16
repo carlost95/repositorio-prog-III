@@ -9,6 +9,8 @@ public class Avion {
 	private String matricula;
 	private ArrayList<Asiento> listaAsiento;
 	private int horasVueloAvion;
+
+	
 	
 	
 	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaAsiento, int horasVueloAvion) {
@@ -47,12 +49,11 @@ public class Avion {
 		return horasVueloAvion/60;
 	}
 
-	public void setHorasVueloAvion(int horasVueloAvion) {
+	public void setHorasVueloAvion(int horasVueloAvion){
 		this.horasVueloAvion = horasVueloAvion;
 	}
 	public void contadorHorasVuelo(int horaVueloActual) {
 		this.horasVueloAvion += horaVueloActual;
 		
 	}
-	
 }
