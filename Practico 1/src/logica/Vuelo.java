@@ -1,9 +1,13 @@
 package logica;
 
 import java.sql.Date;
+import java.text.Format;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 
@@ -123,20 +127,34 @@ public class Vuelo {
 						(fechaHoraSalida.getMinute() - fechaHoraArribo.getMinute());
 				avion.contadorHorasVuelo(duracionVuelo);
 				}
-	for (Piloto piloto : pilotos) {
-		piloto.contadorHorasVuelo(duracionVuelo);
-	}
+//	for (Piloto piloto : pilotos) {
+//		piloto.contadorHorasVuelo(duracionVuelo);
+//	}
 	}
 	
-	public String mostrarDetalleVuelo (){
+//	public String mostrarDetalleVuelo (){
+//		pasarHoras();
+//		return ("Vuelo "+ codigoVuelo +" - "+ avion.getModelo() +" "+avion.getMatricula()+'\n'+
+//		fechaHoraSalida.getDayOfWeek()+" "+fechaHoraSalida.getDayOfMonth()+" de "+fechaHoraSalida.getMonth()+" "+
+//		fechaHoraSalida.getHour()+":"+fechaHoraSalida.getMinute()+" "+salida.getCodigo()+" ("+salida.getCiudad().getNombre()+" - "+salida.getNombre()+")"+'\n'+
+//		fechaHoraArribo.getDayOfWeek()+" "+ fechaHoraArribo.getDayOfMonth()+" de "+ fechaHoraArribo.getMonth()+" "+
+//		fechaHoraArribo.getHour()+":"+fechaHoraArribo.getMinute()+" "+arribo.getCodigo()+" ("+arribo.getCiudad().getNombre()+" - "+arribo.getNombre()+")"+'\n'+
+//		"Operado por "+aerolinea.getNombre() +" Duración "+duracionVuelo/60+"h "+duracionVuelo%60+"m");
+//		
+//	}
+	public String getDetails() {
+//		String fechaSalida =fechaHoraSalida.getDayOfMonth()+"/"+fechaHoraSalida.getMonth()+"/"+fechaHoraSalida.getYear();
+//		LocalDate dateSalida =LocalDate.parse(fechaSalida, DateTimeFormatter.ofPattern("dddd/MMMM/yyyy"));
 		pasarHoras();
-		return ("Vuelo "+ codigoVuelo +" - "+ avion.getModelo() +" "+avion.getMatricula()+'\n'+
-		fechaHoraSalida.getDayOfWeek()+" "+fechaHoraSalida.getDayOfMonth()+" de "+fechaHoraSalida.getMonth()+" "+
+		Locale español = new Locale("es","AR");
+		
+		return ("Vuelo "+ codigoVuelo +" - "+ avion.getModelo() +'\n'+
+		fechaHoraSalida.getDayOfWeek()+" "+fechaHoraSalida.getDayOfMonth()+" de "+fechaHoraSalida.getMonth().getDisplayName(TextStyle.FULL,español)+" "+
 		fechaHoraSalida.getHour()+":"+fechaHoraSalida.getMinute()+" "+salida.getCodigo()+" ("+salida.getCiudad().getNombre()+" - "+salida.getNombre()+")"+'\n'+
 		fechaHoraArribo.getDayOfWeek()+" "+ fechaHoraArribo.getDayOfMonth()+" de "+ fechaHoraArribo.getMonth()+" "+
 		fechaHoraArribo.getHour()+":"+fechaHoraArribo.getMinute()+" "+arribo.getCodigo()+" ("+arribo.getCiudad().getNombre()+" - "+arribo.getNombre()+")"+'\n'+
-		"Operado por "+aerolinea.getNombre() +" Duración "+duracionVuelo/60+"h "+duracionVuelo%60+"m");
-		
+		"Operado por "+aerolinea.getNombre() +". Duración "+duracionVuelo/60+"h "+duracionVuelo%60+"m");
+//		return (dateSalida.getDayOfMonth()+"");
 	}
 	
 	

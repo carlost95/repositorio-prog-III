@@ -13,7 +13,7 @@ public class Avion {
 	
 	
 	
-	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaAsiento, int horasVueloAvion) {
+	public Avion(int idAvion, String modelo, String matricula, ArrayList<Asiento> listaAsiento) {
 		super();
 		this.idAvion = idAvion;
 		this.modelo = modelo;

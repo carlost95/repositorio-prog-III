@@ -22,11 +22,11 @@ public class test {
 		ArrayList<Avion> aviones =  new ArrayList<>();
 		ArrayList<Ciudad> ciudades = new ArrayList<>();
 		
-		Piloto p1 = new Piloto(1, "Perez","Juan Antonio","07071970", LocalDate.of(1970, 07, 07),5);
-		Piloto p2 = new Piloto(2, "Martínez", "Juan Ignacio","08081978", LocalDate.of(1978, 8, 8),4);
-		Piloto p3 = new Piloto(3, "López", "Juan Carlos", "05051950", LocalDate.of(1950, 05, 05),3);
-		Piloto p4 = new Piloto(4, "Gomez", "juan Gabriel", "10101960", LocalDate.of(1960, 10, 10),2);
-		Piloto p5 = new Piloto(5, "Juarez", "Leonel Agustin", "07365987", LocalDate.of(1968, 03, 05),1);
+		Piloto p1 = new Piloto(1, "Perez","Juan Antonio","07071970", LocalDate.of(1970, 07, 07));
+		Piloto p2 = new Piloto(2, "Martínez", "Juan Ignacio","08081978", LocalDate.of(1978, 8, 8));
+		Piloto p3 = new Piloto(3, "López", "Juan Carlos", "05051950", LocalDate.of(1950, 05, 05));
+		Piloto p4 = new Piloto(4, "Gomez", "juan Gabriel", "10101960", LocalDate.of(1960, 10, 10));
+		Piloto p5 = new Piloto(5, "Juarez", "Leonel Agustin", "07365987", LocalDate.of(1968, 03, 05));
 			
 		pilotos.add(p1);
 		pilotos.add(p2);
@@ -41,10 +41,10 @@ public class test {
 		
 		ciudades.add(c1);
 
-		Aeropuerto ae1= new Aeropuerto(1, "Aeropuerto Capitán Vicente Almandos Almonacid", c1, "IRJ");
-		Aeropuerto ae2= new Aeropuerto(2, "Aeropuerto Buenos Aires Jorge Newbery", c2, "EAP");
-		Aeropuerto ae3 = new Aeropuerto(3, "Aeropuerto El Plumerillo", c3, "MDZ");
-		Aeropuerto ae4 = new Aeropuerto(4, "Aeropuerto Benjamín Matienzo", c4, "TUC");
+		Aeropuerto ae1= new Aeropuerto(1, "Aeropuerto Capitán Vicente Almandos Almonacid", "IRJ", c1);
+		Aeropuerto ae2= new Aeropuerto(2, "Aeropuerto Buenos Aires Jorge Newbery", "EAP", c2);
+		Aeropuerto ae3 = new Aeropuerto(3, "Aeropuerto El Plumerillo", "MDZ", c3);
+		Aeropuerto ae4 = new Aeropuerto(4, "Aeropuerto Benjamín Matienzo", "TUC", c4);
 		
 		Pasajero ps1 = new Pasajero(1, "20123456784", "Ramírez","Ramiro Ramón", "12345678");
 		Pasajero ps2 = new Pasajero(2, "20102030404",  "Fernández", "Fernando Fermín", "10203040");
@@ -59,11 +59,11 @@ public class test {
 		Aerolinea a4 = new Aerolinea(4, "Iberia");
 		Aerolinea a5 = new Aerolinea(5, "Emirates");
 
-		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion,5);	
-		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion,4);
-		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion,3);
-		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion,2);
-		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion,1);
+		Avion v1 = new Avion(1, "Airbus A340-313X", "LV-FPV", asientosAvion);	
+		Avion v2 = new Avion(2, "Airbus A330-223", "LV-FNI", asientosAvion);
+		Avion v3 = new Avion(3, "Boeing 737-8MB", "LV-FYK", asientosAvion);
+		Avion v4 = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", asientosAvion);
+		Avion v5 = new Avion(5, "A320", "LV-CBV", asientosAvion);
 
 		
 		Asiento as1 = new Asiento(1, "A1");
@@ -144,11 +144,11 @@ public class test {
 		
 		System.out.println("------------------mostrar aeroppuertos---------------------------");
 		for (Aeropuerto aeropuerto : aeropuertos) {
-			System.out.println(aeropuerto.mostrarAeropuerto());
+			System.out.println(aeropuerto.showDenomination());
 		}
 		System.out.println("----------------se muestra los detalles del vuelo----------------");
 		for (Vuelo vuelo : vuelos) {
-			System.out.println(vuelo.mostrarDetalleVuelo());
+			System.out.println(vuelo.getDetails());
 		}
 		System.out.println("-----------------mostrar detalle de asignacion-------------------");
 		for (Vuelo vuelo : vuelos) {

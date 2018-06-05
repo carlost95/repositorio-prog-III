@@ -11,7 +11,7 @@ public class Piloto {
 	private LocalDate fechaNacimiento;
 	private int horasDeVueloPiloto;
 	
-	public Piloto(int idPiloto, String apellido, String nombre, String documento, LocalDate fechaNacimiento, int horasDeVueloPiloto) {
+	public Piloto(int idPiloto, String apellido, String nombre, String documento, LocalDate fechaNacimiento) {
 		super();
 		this.idPiloto = idPiloto;
 		this.apellido = apellido;
@@ -61,6 +61,14 @@ public class Piloto {
 	}
 	public void contadorHorasVuelo(int horasVueloActual) {
 		horasDeVueloPiloto += horasVueloActual;
+	}
+
+	public int getAge(LocalDate of) {
+		return -fechaNacimiento.compareTo(of);
+	}
+
+	public String getSurnameAndName() {
+		return apellido+", "+nombre;
 	}
 	
 }
