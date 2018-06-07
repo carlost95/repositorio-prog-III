@@ -1,13 +1,16 @@
 package test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.Test;
+
 import logica.Aerolinea;
 import logica.Aeropuerto;
 import logica.Avion;
 import logica.Ciudad;
 import logica.Vuelo;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.time.LocalDateTime;
-import org.junit.jupiter.api.Test;
 
 class VueloTest {
 
@@ -17,7 +20,6 @@ class VueloTest {
 		Vuelo aFlight = makeAFlight();
 
 		String output = aFlight.getDetails();
-		
 
 		String expected = "Vuelo AR2443 - Embraer ERJ-190-100AR\r\n"
 				+ "Martes 10 de abril 21:10 IRJ (La Rioja - Aeropuerto Capitán Vicente Almandos Almonacid)\r\n"
@@ -25,6 +27,21 @@ class VueloTest {
 				+ "Operado por Austral. Duración 1h 35m";
 
 		assertEquals(expected, output);
+
+	}
+
+	// Para este test, se requiere crear una Interface que provea la funcionalidad
+	// de dar la fecha en Español. La clase Vuelo debe implementar esa interface
+	// El método "fechaHoraSpanish" no es un método "normal" de la clase Vuelo, sino
+	// la implementación de un método de interface
+	@Test
+	void fechaHoraSpanish_LocalDateTimeValue_ReturnsFormatted() {
+		LocalDateTime departureDateTime = LocalDateTime.of(2018, 06, 07, 13, 10);
+		Vuelo aFlight = new Vuelo("", null, departureDateTime, null, null, null, null, null, null);
+
+		String dateFormatted = aFlight.fechaHoraSpanish(departureDateTime);
+
+		assertEquals("Jueves 7 de junio 13:10", dateFormatted);
 
 	}
 
@@ -57,7 +74,7 @@ class VueloTest {
 		Aerolinea austral = new Aerolinea(1, "Austral");
 
 		Avion embraer = new Avion(4, "Embraer ERJ-190-100AR", "LV-CIH", null);
-		
+
 		// Avion embraer = new Avion(idAvion, modelo, matricula, listaAsiento)
 
 		final Vuelo aFlight = new Vuelo("AR2443", origin, LocalDateTime.of(2018, 04, 10, 21, 10), destination,
