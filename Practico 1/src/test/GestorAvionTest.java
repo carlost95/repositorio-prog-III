@@ -73,10 +73,13 @@ class GestorAvionTest {
 
 	@Test
 	void horasVueloAvion_listaVuelos_devuelveSuma() {
-
-		GestorAvion elGestor = new GestorAvion(new LinkedList<Avion>());
-		int horasVuelo = elGestor.horasVueloAvion(crearVuelos());
+		Avion avion1 = new Avion(1, "Airbus A340-313X", "LV-FPV", null);
+		
+		GestorAvion elGestor = new GestorAvion (new LinkedList<Avion>());
+		
+		int horasVuelo = elGestor.horasVueloAvion(crearVuelos(),avion1);
 		assertEquals(15, horasVuelo);
+
 
 	}
 

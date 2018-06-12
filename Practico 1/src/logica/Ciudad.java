@@ -32,5 +32,4 @@ public class Ciudad {
 	public String toString() {
 		return  idCiudad +" "+ nombre +" "+ codigoPostal ;
 	}
-	
 }
