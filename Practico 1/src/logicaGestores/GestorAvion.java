@@ -7,13 +7,15 @@ import logica.Avion;
 import logica.Vuelo;
 
 public class GestorAvion {
+	
 	private LinkedList<Avion> linkedList =new LinkedList<>();
 
 	public GestorAvion(LinkedList<Avion> linkedList) {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public  boolean crearAvion (Avion avion) {
+		
 		return true;
 	}
 	public boolean modificarAvion(Avion avion) {
@@ -27,8 +29,10 @@ public class GestorAvion {
 		return false;	
 	}
 	public int horasVueloAvion(Collection<Vuelo> crearVuelos, Avion avion1) {
-		// TODO Auto-generated method stub
-		return 0;
+		int horasDeVueloAvion = 0;
+		for (Vuelo vuelo : crearVuelos) {
+		}
+		return horasDeVueloAvion;
 	}
 	public LinkedList<Avion> getColeccionAviones() {
 		

@@ -1,4 +1,5 @@
 package test;
+import logica.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,14 +8,16 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.junit.jupiter.api.Test;
+
 class GestorPedidoUnitTest {
 
 	@Test
 	void crearPedido_creacionCorrecta() {
 
 		GestorPedido elGestor = new GestorPedido(new LinkedList<Pedido>());
-
 		elGestor.crearPedido(factoryPedido());
+	
 		int pedidosLuegoDeCrear = elGestor.getColeccionPedidos().size();
 
 		assertEquals(1,pedidosLuegoDeCrear);
@@ -55,22 +58,23 @@ class GestorPedidoUnitTest {
 	
 	
 	private Pedido factoryPedido() {
-		Pizza pizzaNapolitana = new Pizza("Napolitana", 100.80d, new Base("Masa tipo"), cubiertaNapolitana());
-		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25d, new Base("Masa tipo"), cubiertaFugazzeta());
+		Pizza pizzaNapolitana = new Pizza("Napolitana", 100.80, new Base("Masa tipo"), cubiertaNapolitana());
+		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25, new Base("Masa tipo"), cubiertaFugazzeta());
 		
-		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),pizzaNapolitana);
+		Pedido unPedido = new Pedido ("Perez, Juan","San Martin 123",0.0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 		unPedido.agregarPizza(pizzaFugazzeta);
 
 		return unPedido;
 	}
 	
 	private Pedido factoryPedidoIncompleto() {
-		return new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),null);
+		return new Pedido("Perez, Juan","San Martin 123",0.0,LocalDate.of(2018, 07, 02),null);
 	}
 	
 
 	private Pedido factoryPedidoSinCliente() {
-		return new Pedido(null,null,0d,LocalDate.of(2018, 07, 02),pizzaNapolitana);
+		Pizza pizzaNapolitana = new Pizza("Napolitana", 100.80, new Base("Masa tipo"), cubiertaNapolitana());
+		return new Pedido(null,null,0.0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 	}
 
 

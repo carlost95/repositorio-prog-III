@@ -1,5 +1,9 @@
 package test;
 
+import logica.Piloto;
+import logicaGestores.*;
+import logica.Vuelo;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
@@ -9,9 +13,7 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.undec.prog3.domain.Piloto;
-import ar.edu.undec.prog3.domain.Vuelo;
-import gestor.GestorPilotos;
+
 
 class GestorPilotosTest {
 

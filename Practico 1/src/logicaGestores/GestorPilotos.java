@@ -1,8 +1,15 @@
 package logicaGestores;
 
-import logica.Piloto;
+import java.util.Collection;
+import java.util.LinkedList;
 
-public class GestorPiloto {
+import logica.Piloto;
+import logica.Vuelo;
+
+public class GestorPilotos {
+	public GestorPilotos(LinkedList<Piloto> linkedList) {
+		
+	}
 	public boolean  agregarPiloto(Piloto piloto) {
 		return false;
 	}
@@ -14,5 +21,8 @@ public class GestorPiloto {
 	}
 	public boolean devolverPiloto (Piloto piloto) {
 		return false;
+	}
+	public int horasVueloPiloto(Collection<Vuelo> crearVuelos, Piloto piloto1) {
+		return 0;
 	}
 }

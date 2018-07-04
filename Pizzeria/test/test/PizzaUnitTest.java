@@ -8,16 +8,19 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
+import logica.Base;
+import logica.Pizza;
+import logica.*;
 class PizzaUnitTest {
 
 	@Test
 	void instanciarPizza_pizzaConBase_ReturnBase() {
-		Pizza unaPizza=new Pizza("Napolitana",100.80d,new Base("Masa tipo"),cubiertaNapolitana());
-		
+		Pizza unaPizza=new Pizza("Napolitana",100.80,new Base("Masa tipo"),cubiertaNapolitana());
+		Pedido unPedido = new Pedido(null, null, 0, null, null);
 		assertEquals("Masa Tipo", unPedido.getBase());
 	}
 
-	private Collection<Cubierta> cubiertaNapolitana() {
+	private Collection <Cubierta> cubiertaNapolitana() {
 		Cubierta salsa= new Cubierta("Salsa tomate");
 		Cubierta queso=new Cubierta("Mozzarela");
 		Cubierta morron= new Cubierta("Tomate");
