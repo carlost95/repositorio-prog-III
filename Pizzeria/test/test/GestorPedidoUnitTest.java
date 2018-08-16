@@ -63,12 +63,12 @@ class GestorPedidoUnitTest {
 		
 		Pedido unPedido = new Pedido ("Perez, Juan","San Martin 123",0.0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 		unPedido.agregarPizza(pizzaFugazzeta);
-
+		
 		return unPedido;
 	}
 	
 	private Pedido factoryPedidoIncompleto() {
-		return new Pedido("Perez, Juan","San Martin 123",0.0,LocalDate.of(2018, 07, 02),null);
+		return new Pedido("Perez, Juan","San Martin 123",0.0,LocalDate.of(2018, 07, 02), null);
 	}
 	
 

@@ -1,20 +1,22 @@
 package logica;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.LinkedList;
 
 public class GestorPedido {
-	private LinkedList <Pedido> pedidos;
+	private LinkedList <Pedido> pedidos = new 	LinkedList<>();
 
 	public GestorPedido(LinkedList<Pedido> linkedList) {
-		// TODO Auto-generated constructor stub
-	}
 
-	public void crearPedido(Pedido factoryPedido) { 
-		pedidos.add(factoryPedido);
 	}
 
 	public LinkedList<Pedido> getColeccionPedidos() {
 		return this.pedidos;
 }
+
+	public void crearPedido(Pedido pedidoACrear) {
+		pedidos.add(pedidoACrear);
+		
+	}
 }

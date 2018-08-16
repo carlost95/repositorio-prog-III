@@ -9,7 +9,7 @@ public class Pizza {
 	private Integer idPizza;
 	private String nombre;
 	private Base base;
-	private Collection<Cubierta> cubierta;
+	private Collection<Cubierta> cubierta = new LinkedList<>();
 	private double precio;
 	
 	public Pizza(String nombre, double precio,Base base, Collection<Cubierta> cubierta) {

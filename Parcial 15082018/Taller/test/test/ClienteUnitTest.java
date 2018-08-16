@@ -1,8 +1,7 @@
 package test;
 
-import static org.junit.Assert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,8 +24,8 @@ class ClienteUnitTest {
 	
 	@Test
 	void instanciarCliente_ClienteCompleto_instanciaCorrecta() {
-		Cliente elCliente=Cliente.instancia(1, "Lopez", "Juan Manuel", "30123456", LocalDate.of(1990, 5, 20),"9 de Julio 1000","3825405060");
-		
+		Cliente elCliente = Cliente.instancia(1, "Lopez", "Juan Manuel", "30123456", LocalDate.of(1990, 5, 20),"9 de Julio 1000","3825405060");
+		System.out.println("muestra "+elCliente);
 		assertNotNull(elCliente);		
 	}
 	
@@ -57,7 +56,7 @@ class ClienteUnitTest {
 		elCliente.asignarVehiculo(vwGolf);
 		elCliente.asignarVehiculo(toyotaCorolla);
 		
-		List<Vehiculo> losVehiculos=elCliente.devolverVehiculos();
+		List<Vehiculo> losVehiculos=(List<Vehiculo>) elCliente.devolverVehiculos();
 		
 		assertEquals(2, losVehiculos.size());
 		
@@ -67,7 +66,7 @@ class ClienteUnitTest {
 	void devolverVehiculos_clienteSinVehiculos_coleccionSinDatos() {
 		Cliente elCliente=Cliente.instancia(1, "Lopez", "Juan Manuel", "30123456", LocalDate.of(1990, 5, 20),"9 de Julio 1000","3825405060");
 		
-		List<Vehiculo> losVehiculos=elCliente.devolverVehiculos();
+		List<Vehiculo> losVehiculos=(List<Vehiculo>) elCliente.devolverVehiculos();
 
 		assertEquals(0, losVehiculos.size());
 		

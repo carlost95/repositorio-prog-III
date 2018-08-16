@@ -13,20 +13,21 @@ public class Pedido {
 	private String domicilio;
 	private double importe;
 	private LocalDate fechaEntrega;
-	private Collection <Pizza> pizzas;
-
+	private Collection <Pizza> pizzas = new LinkedList<>();
+	public static int num=0;
 		
-	public Pedido(String nombre, String domicilio, double importe, LocalDate fechaEntrega, Collection<Pizza> pizzas) {
+	public Pedido(String nombre, String domicilio, double importe, LocalDate fechaEntrega, Pizza pizzaPedido) {
+		this.idPedido = num;
 		this.nombre = nombre;
 		this.domicilio = domicilio;
 		this.importe = importe;
 		this.fechaEntrega = fechaEntrega;
-		this.pizzas = (LinkedList<Pizza>)pizzas;
+		this.pizzas.add(pizzaPedido);
+		num++;
 	}
 
-	public Pedido(Object nombre2, Object domicilio2, double importe2, LocalDate of, Pizza pizzaNapolitana) {
-		// TODO Auto-generated constructor stub
-	}
+
+
 
 	public Integer getIdPedido() {
 		return idPedido;
@@ -72,17 +73,16 @@ public class Pedido {
 		this.pizzas = pizzas;
 	}
 
-	public int importeTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double importeTotal() {
+		return importe;
 	}
 
-	public void agregarPizza(Pizza pizzaFugazzeta) {
-		this.pizzas.add(pizzaFugazzeta);
+	public void agregarPizza(Pizza pizzaNueva) {
+		this.pizzas.add(pizzaNueva);
 	}
 
 	public Collection<Pizza> getPizzas() {
-		return this.pizzas;
+		return pizzas;
 	}
 
 	public String getBase() {
