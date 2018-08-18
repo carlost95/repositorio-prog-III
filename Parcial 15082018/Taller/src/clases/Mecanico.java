@@ -10,16 +10,32 @@ public class Mecanico {
 	private String matricula;
 	private LocalDate fechaNacimiento;
 	private String direccion;
+	
 
-	public static Mecanico instancia(int i, String string, String string2, Object object, LocalDate of,
-			String string3) {
-		// TODO Auto-generated method stub
-		return null;
+	private Mecanico(int idMecanico, String apellido, String nombre, String matricula, LocalDate fechaNacimiento,
+			String direccion) {
+		super();
+		this.idMecanico = idMecanico;
+		this.apellido = apellido;
+		this.nombre = nombre;
+		this.matricula = matricula;
+		this.fechaNacimiento = fechaNacimiento;
+		this.direccion = direccion;
+	}
+
+	public static Mecanico instancia(int idMecanico, String apellido, String nombre, String matricula, LocalDate fechaNacimiento,
+			String direccion) {
+		if (matricula==null) {
+			return null;
+		}
+		else {
+			return new Mecanico(idMecanico, apellido, nombre, matricula, fechaNacimiento, direccion);
+		}
 	}
 
 	public String mostrarMecanico() {
-		// TODO Auto-generated method stub
-		return null;
+//		Perez, Juan Carlos (1000)
+		return apellido+", "+nombre+" ("+matricula+")";
 	}
 
 }
