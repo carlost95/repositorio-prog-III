@@ -19,12 +19,13 @@ public class Cliente {
 
 	public static  Cliente instancia(int idCliente, String apellido, String nombre, String documento,
 			LocalDate fechadeNacimiento, String direccion, String telefono) {
-
+		System.out.println("prueba de commit");
 		if (documento == null)
 			return null;
 		else {
 			 return new Cliente(idCliente,apellido,nombre,documento,fechadeNacimiento,direccion,telefono);
 		}
+		
 
 	}
 
